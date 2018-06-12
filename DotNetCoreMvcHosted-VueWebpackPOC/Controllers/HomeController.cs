@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
 using DotNetCoreMvcHosted_VueWebpackPOC.Models;
 
@@ -12,19 +8,9 @@ namespace DotNetCoreMvcHosted_VueWebpackPOC.Controllers
     {
         public IActionResult Index()
         {
-            return View();
-        }
+            ViewBag.Title = ".NET Core MVC Hosted Vue.js Webpack Template";
 
-        public IActionResult About()
-        {
-            ViewData["Message"] = "Your application description page.";
-
-            return View();
-        }
-
-        public IActionResult Contact()
-        {
-            ViewData["Message"] = "Your contact page.";
+            ViewBag.Message = "This is rendered from the .NET Core MVC action";
 
             return View();
         }
