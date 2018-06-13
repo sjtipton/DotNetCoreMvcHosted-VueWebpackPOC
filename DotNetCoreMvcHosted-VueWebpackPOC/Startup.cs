@@ -1,11 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+using DotNetCoreMvcHosted_VueWebpackPOC.Extensions;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.AspNetCore.HttpOverrides;
 
 namespace DotNetCoreMvcHosted_VueWebpackPOC
 {
@@ -21,6 +19,8 @@ namespace DotNetCoreMvcHosted_VueWebpackPOC
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.ConfigureCors();
+            services.ConfigureIISIntegration();
             services.AddMvc();
         }
 
@@ -36,6 +36,8 @@ namespace DotNetCoreMvcHosted_VueWebpackPOC
             {
                 app.UseExceptionHandler("/Home/Error");
             }
+
+            app.UseCors("CorsPolicy");
 
             app.UseStaticFiles();
 
