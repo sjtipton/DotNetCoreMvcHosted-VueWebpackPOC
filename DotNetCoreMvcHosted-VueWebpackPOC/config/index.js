@@ -45,13 +45,14 @@ module.exports = {
 
   build: {
     // Template for backend-framework (http://vuejs-templates.github.io/webpack/backend.html)
-    index: path.resolve(__dirname, '../Views/Home/Index.cshtml'),
+    index: path.resolve(__dirname, '..', 'Views', 'Home', 'Index.cshtml'),
 
     // For ASP.NET MVC IIS Host, application name
-    hostingApplicationName: 'VueWebpackPoc',
+    // TODO uncomment this when it has an application name in IIS
+    // hostingApplicationName: 'VueWebpackPoc',
 
     // Paths
-    assetsRoot: path.resolve(__dirname, '../dist'),
+    assetsRoot: path.resolve(__dirname, '..', 'wwwroot', 'dist'),
     assetsSubDirectory: 'static',
     assetsPublicPath: '/',
 
