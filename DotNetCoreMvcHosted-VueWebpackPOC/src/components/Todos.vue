@@ -7,8 +7,8 @@
           Loading results...
         </span>
         <a v-else
-           v-for="(todo, i) in todos"
-           v-bind:key="i"
+           v-for="todo in todos"
+           v-bind:key="todo.id"
            class="list-group-item"
            href="#/todos">
           <span class="badge" v-if="todo.completed">
@@ -30,7 +30,7 @@ export default {
       todos: [],
       errors: [],
       isLoading: true,
-      endpoint: 'api/faketodos'
+      endpoint: 'api/todos/faketodos'
     }
   },
   methods: {
